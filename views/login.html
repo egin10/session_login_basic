@@ -3,12 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>Login | App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
-      <form class="" action="/login" method="post">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit" value="Log In">
-      </form>
+    <div class="container">
+        {% for e in errors %}
+          <div class="alert alert-danger" role="alert">
+            {{ e.msg }}
+          </div>
+        {% endfor %}
+
+        <form action="/login" method="post">
+          <div class="form-group col-md-4">
+            <input class="form-control" type="email" name="email" placeholder="email">
+          </div>
+          <div class="form-group col-md-4">
+            <input class="form-control" type="password" name="password" placeholder="Password">
+          </div>
+          <div class="form-group col-md-4">
+            <input class="btn btn-primary" type="submit" value="Log In">
+          </div>
+        </form>
+
+    </div>
+
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
   </body>
 </html>
